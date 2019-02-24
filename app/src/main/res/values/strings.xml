@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MobioticsApp</string>
+    <string name="loading">Loading</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="signed_out">Sign Out</string>
+    <string name="google_title_text">Google</string>
+    <string name="google_status_fmt">Google User: %s</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="google_sign_up">Google</string>
+</resources>
