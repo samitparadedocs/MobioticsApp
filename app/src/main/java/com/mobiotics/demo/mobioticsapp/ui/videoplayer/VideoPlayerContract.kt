@@ -6,9 +6,6 @@ import com.mobiotics.demo.mobioticsapp.models.RetroVideo
 
 interface VideoPlayerContract {
     interface View {
-        fun showProgressDialogView()
-        fun hideProgressDialogView()
-        fun generateDataList(photoList: List<RetroVideo>)
         fun displayToast(message: String)
         fun setUpadater(videoList: List<RetroVideo>)
         fun setDataExpoPlayer(retroVideo: RetroVideo)

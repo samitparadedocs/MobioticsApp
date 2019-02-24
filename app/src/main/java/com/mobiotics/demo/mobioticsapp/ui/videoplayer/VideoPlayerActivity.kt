@@ -56,10 +56,6 @@ class VideoPlayerActivity : AppCompatActivity(), VideoPlayerContract.View {
         })
     }
 
-    private fun getUpdatedVideo(retroVideo: RetroVideo) {
-        presenter.getVideo(db!!, retroVideo.id!!)
-    }
-
     override fun setUpadater(videoList: List<RetroVideo>) {
         videoList.forEach {
             if (it.id!!.equals(retroVideo.id)) {
@@ -80,6 +76,7 @@ class VideoPlayerActivity : AppCompatActivity(), VideoPlayerContract.View {
             }
             exoPlayer?.release()
             playButton.visibility = View.VISIBLE
+            nestedScrollView.scrollTo(0,0)
         }
         videoList.forEach {
             if (it.id!!.equals(retroVideo.id)) {
@@ -117,25 +114,8 @@ class VideoPlayerActivity : AppCompatActivity(), VideoPlayerContract.View {
         }
     }
 
-
-    override fun showProgressDialogView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun hideProgressDialogView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun generateDataList(photoList: List<RetroVideo>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
     override fun displayToast(message: String) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun onStart() {
-        super.onStart()
     }
 
     override fun onStop() {

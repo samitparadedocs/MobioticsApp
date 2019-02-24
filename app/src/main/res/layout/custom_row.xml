@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorListBackground"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/coverImage"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="140dp"
         android:scaleType="fitXY" />
 
     <TextView
@@ -17,10 +17,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:paddingLeft="16dp"
-        android:paddingTop="16dp"
+        android:paddingTop="8dp"
         android:paddingRight="16dp"
         android:textColor="@color/color_white"
-        android:textSize="26sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -32,8 +32,8 @@
         android:maxLines="2"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:paddingBottom="16dp"
-        android:textColor="@color/colorPrimary"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorDarkGray"
         android:textSize="16sp" />
 
 </LinearLayout>

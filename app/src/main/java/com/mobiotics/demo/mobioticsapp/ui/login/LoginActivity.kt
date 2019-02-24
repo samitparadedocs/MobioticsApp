@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : BaseActivity(), View.OnClickListener, LoginContract.View {
 
 
-   // private lateinit var googleSignInClient: GoogleSignInClient
+    // private lateinit var googleSignInClient: GoogleSignInClient
     lateinit var loginPresenter: LoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,16 +33,10 @@ class LoginActivity : BaseActivity(), View.OnClickListener, LoginContract.View {
 
     }
 
-    // [START on_start_check_user]
     public override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        //  val currentUser = auth.currentUser
-        //updateUI(currentUser)
     }
-    // [END on_start_check_user]
 
-    // [START onactivityresult]
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -54,25 +48,15 @@ class LoginActivity : BaseActivity(), View.OnClickListener, LoginContract.View {
                 val account = task.getResult(ApiException::class.java)
                 loginPresenter.firebaseAuthWithGoogle(account!!)
             } catch (e: ApiException) {
-                // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e)
-                // [START_EXCLUDE]
-                //  updateUI(null)
-                // [END_EXCLUDE]
             }
         }
     }
-    // [END onactivityresult]
 
-
-    // [END auth_with_google]
-
-    // [START signin]
     override fun signIn(signInIntent: Intent) {
 
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
-
 
     override fun onClick(v: View) {
         val i = v.id
@@ -104,15 +88,19 @@ class LoginActivity : BaseActivity(), View.OnClickListener, LoginContract.View {
     }
 
     override fun loginSuccess() {
+        loginSucess()
         val intent = Intent(this, VideoListActivity::class.java)
 
         intent.putExtra("keyIdentifier", "test")
         startActivity(intent)
+        finish()
     }
 
     override fun loginFailure() {
-        //  Log.w(LoginActivity.TAG, "signInWithCredential:failure", task.exception)
         Snackbar.make(main_layoutlogin, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
-        //updateUI(null)
+     }
+
+    fun loginSucess() {
+        Snackbar.make(main_layoutlogin, "Authentication Success.", Snackbar.LENGTH_SHORT).show()
     }
 }

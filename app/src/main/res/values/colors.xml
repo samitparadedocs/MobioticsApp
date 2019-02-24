@@ -7,4 +7,6 @@
     <color name="color_white">#fff</color>
     <color name="lightGray">#D3D3D3</color>
     <color name="black">#000</color>
+    <color name="colorListBackground">#718B90</color>
+    <color name="colorDarkGray">#C7D3D7</color>
 </resources>

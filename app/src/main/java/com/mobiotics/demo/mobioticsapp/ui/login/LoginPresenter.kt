@@ -58,8 +58,6 @@ class LoginPresenter(private var mLoginContactView: LoginContract.View) : LoginC
                         // Sign in success, update UI with the signed-in user's information
                         //  Log.d(LoginActivity.TAG, "signInWithCredential:success")
                         val user = auth.currentUser
-                        //updateUI(user)
-
                         mLoginContactView?.loginSuccess()
 
 
