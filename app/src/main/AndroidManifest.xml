@@ -21,7 +21,6 @@
         </activity>
         <activity android:name=".ui.videolist.VideoListActivity" />
         <activity android:name=".ui.videoplayer.VideoPlayerActivity" />
-        <!--<activity android:name=".ui.login.LoginActivity"></activity>-->
-    </application>
+       </application>
 
 </manifest>
